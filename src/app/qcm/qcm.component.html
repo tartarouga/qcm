@@ -1,0 +1,48 @@
+<div class="container">
+    <div>
+        <h3 class="display-4">Testez vos connaissances!</h3>
+        <h4>Q.C.M</h4>
+    </div>
+    <form (submit)="update(qcmForm)" #qcmForm="ngForm">
+        <div *ngFor="let q of tab;let i=index">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{q.enonce}}
+                        </mat-panel-title>
+
+                    </mat-expansion-panel-header>
+
+                    <mat-radio-group aria-label="Select an option" ngModel name="element{{i}}">
+
+                        <mat-radio-button name="radio1" value="{{q.choix[0]}}">
+                            {{q.choix[0]}}
+                        </mat-radio-button>
+                        <mat-radio-button name="radio2" value="{{q.choix[1]}}">{{q.choix[1]}}</mat-radio-button>
+                        <mat-radio-button name="radio3" value="{{q.choix[2]}}">{{q.choix[2]}}</mat-radio-button>
+                        <mat-radio-button name="radio4" value="{{q.choix[3]}}">{{q.choix[3]}}</mat-radio-button>
+
+                    </mat-radio-group>
+
+
+
+
+
+
+
+
+                </mat-expansion-panel>
+
+            </mat-accordion>
+
+        </div>
+        <mat-action-row>
+            <button mat-button type="submit">envoie</button>
+        </mat-action-row>
+
+
+    </form>
+
+
+</div>
